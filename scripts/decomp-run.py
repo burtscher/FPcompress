@@ -63,6 +63,8 @@ for input_folder in os.listdir(inputs_dir):
         median_throughputs.append(median_throughput)
         
         print(f"Median throughput for {exe_file} on {input_file}: {median_throughput}")
+        # The Kleene star is a hack that I think works for this small set. Is probably not universalizable
+        os.system("if diff " + compressed_folder_path + "/../" + input_file_path.split('/')[-1].replace(".comp", "*") + " " + output_file_name + " > /dev/null; then echo \"Lossless comparison passed\"; else echo \"Lossless comparison failed\"; fi")
 
     # Calculate geometric mean of median throughputs and median ratios for this subfolder
     geometric_mean_throughput = math.exp(statistics.mean(math.log(x) for x in median_throughputs))
