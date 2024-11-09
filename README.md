@@ -49,8 +49,8 @@ To install the artifact
 2. Run './get\_inputs\_double.py' and './get\_inputs\_single.py' to download and set up the inputs used by the artifact
 3. Run './compile.py' to compile SPratio, SPspeed, DPratio, and DPspeed
 4. Run './run\_experiments\_double.py' and './run\_experiments\_single.py' to produce the intermediate experimental results
-5. Run './chart\_double.py' and './chart\_single.py' to produce compression and decompression charts that look like Figures 8 through 19 but without the results for the third-party codes.
-6. View the charts which are in the current directory under 'double_charts.png' and 'single_charts.png'
+5. Run './chart\_double.py' and './chart\_single.py' to generate compression and decompression charts that look like Figures 8 through 19 but without the results for the third-party codes.
+6. View the charts, which can be found in the current directory under 'double_charts.png' and 'single_charts.png'
 
 ###### Evaluation and expected results
 
