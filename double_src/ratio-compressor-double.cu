@@ -131,22 +131,22 @@ static inline __device__ void propagate_carry(const int value, const long long c
         if (cidm1ml >= 0) {
           val = fullcarry[cidm1ml];
         }
-      } while ((__any_sync(-1, val == 0)) || (__all_sync(-1, val <= 0)));
+      } while ((__any_sync(~0, val == 0)) || (__all_sync(~0, val <= 0)));
 #if defined(WS) && (WS == 64)
-      const long long mask = __ballot_sync(-1, val > 0);
+      const long long mask = __ballot_sync(~0, val > 0);
       const int pos = __ffsll(mask) - 1;
 #else
-      const int mask = __ballot_sync(-1, val > 0);
+      const int mask = __ballot_sync(~0, val > 0);
       const int pos = __ffs(mask) - 1;
 #endif
       long long partc = (lane < pos) ? -val : 0;
-      partc += __shfl_xor_sync(-1, partc, 1);
-      partc += __shfl_xor_sync(-1, partc, 2);
-      partc += __shfl_xor_sync(-1, partc, 4);
-      partc += __shfl_xor_sync(-1, partc, 8);
-      partc += __shfl_xor_sync(-1, partc, 16);
+      partc += __shfl_xor_sync(~0, partc, 1);
+      partc += __shfl_xor_sync(~0, partc, 2);
+      partc += __shfl_xor_sync(~0, partc, 4);
+      partc += __shfl_xor_sync(~0, partc, 8);
+      partc += __shfl_xor_sync(~0, partc, 16);
 #if defined(WS) && (WS == 64)
-      partc += __shfl_xor_sync(-1, partc, 32);
+      partc += __shfl_xor_sync(~0, partc, 32);
 #endif
       if (lane == pos) {
         const long long fullc = partc + val;
