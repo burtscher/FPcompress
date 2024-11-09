@@ -16,7 +16,7 @@ This artifact contains the code and script to generate compression-ratio and thr
   - Publicly available?: Yes
   - Code licenses (if publicly available)?: BSD 3-Clause License
   - Workflow automation framework used?: Python scripts
-  - Archived (provide DOI)?: https://doi.org/10.5281/zenodo.14054538
+  - Archived (provide DOI)?: https://doi.org/10.5281/zenodo.14061031
 
 
 ### Description
