@@ -141,7 +141,7 @@ int main(int argc, char* argv [])
   const long long pre_val = fread(&pre_size, sizeof(pre_size), 1, fin); assert(pre_val == sizeof(pre_size));
   fseek(fin, 0, SEEK_END);
   const long long hencsize = ftell(fin);  assert(hencsize > 0);
-  byte* const hencoded = new byte [pre_size];
+  byte* const hencoded = new byte [std::max(pre_size, hencsize)];
   fseek(fin, 0, SEEK_SET);
   const long long insize = fread(hencoded, 1, hencsize, fin);  assert(insize == hencsize);
   fclose(fin);
