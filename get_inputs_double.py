@@ -151,4 +151,15 @@ print(f"Deleting the compressed file {compressed_file_path}...")
 os.remove(compressed_file_path)
 print(f"Deleted {compressed_file_path}")
 
+#final reordering
+base_directory = "double_inputs"
+source_directory = os.path.join(base_directory, "SDRBENCH-Miranda-256x384x384")
+new_folder = os.path.join(base_directory, "vel")
+os.makedirs(new_folder, exist_ok=True)
+files_to_move = ["velocityx.d64", "velocityy.d64", "velocityz.d64", "viscocity.d64"]
+for file_name in files_to_move:
+  source_path = os.path.join(source_directory, file_name)
+  destination_path = os.path.join(new_folder, file_name)
+  if os.path.exists(source_path):
+    shutil.move(source_path, destination_path)
 
