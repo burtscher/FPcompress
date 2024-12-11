@@ -24,7 +24,7 @@ This artifact contains the code and script to generate compression-ratio and thr
 The artifact can be found at https://github.com/burtscher/FPcompress.
 
 ###### Hardware dependencies
-The hardware required for this artifact is an x86 multi-core CPU and a CUDA-capable GPU. We used a 32-core Intel Xeon Gold 6226R CPU @ 2.9 GHz with hyperthreading enabled to run the CPU codes. To run the GPU codes, we used an NVIDIA RTX 3080 Ti. Using similar hardware should result in throughputs similar to those reported in the paper.
+The hardware required for this artifact is an x86 multi-core CPU and a CUDA-capable GPU. We used a 32-core Intel Xeon Gold 6226R CPU @ 2.9 GHz with hyperthreading enabled to run the CPU codes. To run the GPU codes, we used an NVIDIA RTX 4090. Using similar hardware should result in throughputs similar to those reported in the paper.
 
 ###### Software dependencies
 The required software includes:
