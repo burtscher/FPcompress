@@ -44,6 +44,9 @@ To install the artifact
 - Clone the repository from https://github.com/burtscher/FPcompress
 - Run './compile.py' to compile SPratio, SPspeed, DPratio, and DPspeed
 
+> **Note:**  
+> If you encounter an error related to missing dependencies, add the flag  `-lttb` at the very end of the compilation instructions in  `compile.py`
+
 ###### Experiment workflow
 1. Clone the repository from https://github.com/burtscher/FPcompress
 2. Run './get\_inputs\_double.py' and './get\_inputs\_single.py' to download and set up the inputs used by the artifact
